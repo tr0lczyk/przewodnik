@@ -1,202 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:id="@+id/drawer_layout"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="left">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:adjustViewBounds="false"
-        android:contentDescription="@string/todo"
-        android:cropToPadding="true"
-        android:scaleType="centerCrop"
-        android:src="@drawable/park"
-        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:layout_constraintVertical_weight="1"/>
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="1dp">
 
-    <android.support.v7.widget.GridLayout
-        android:id="@+id/gridLayout"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:columnCount="2"
-        app:rowCount="2"
-        app:alignmentMode="alignMargins"
-        app:columnOrderPreserved="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_weight="2">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            android:elevation="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/colorPrimary"/>
 
-        <!--COlumn 1-->
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <android.support.v7.widget.CardView
+        <ImageView
+            android:id="@+id/imageViewProjectInfo"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_rowWeight="1"
-            app:layout_columnWeight="1"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="8dp">
+            android:contentDescription="@string/todo"
+            android:cropToPadding="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/park"
+            app:layout_constraintBottom_toTopOf="@+id/imageViewEnvironmentAttraction"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_weight="1"
+            android:layout_marginBottom="1dp"/>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="16dp"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/me_time"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Hey Ho"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-        </android.support.v7.widget.CardView>
-
-        <!--Column 2-->
-
-        <android.support.v7.widget.CardView
+        <ImageView
+            android:id="@+id/imageViewEnvironmentAttraction"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_rowWeight="1"
-            app:layout_columnWeight="1"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="8dp">
+            android:layout_marginBottom="1dp"
+            android:layout_marginRight="0.5dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/imageViewBikeTrail"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewAnimalPlant"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewProjectInfo"
+            app:layout_constraintVertical_weight="1"
+            app:srcCompat="@drawable/park" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="16dp"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/family_time"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:text="Family"/>
-
-            </LinearLayout>
-
-        </android.support.v7.widget.CardView>
-
-        <!--COlumn 1-->
-
-        <android.support.v7.widget.CardView
+        <ImageView
+            android:id="@+id/imageViewAnimalPlant"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_rowWeight="1"
-            app:layout_columnWeight="1"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="8dp">
+            android:scaleType="centerCrop"
+            android:layout_marginLeft="0.5dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewEnvironmentAttraction"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/imageViewEnvironmentAttraction"
+            app:layout_constraintTop_toTopOf="@+id/imageViewEnvironmentAttraction"
+            app:srcCompat="@drawable/park" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="16dp"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/lovely_time"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Hey Ho"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-        </android.support.v7.widget.CardView>
-
-        <!--Column 2-->
-
-        <android.support.v7.widget.CardView
+        <ImageView
+            android:id="@+id/imageViewBikeTrail"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_rowWeight="1"
-            app:layout_columnWeight="1"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="8dp">
+            android:layout_marginEnd="1dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewFootTrail"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewEnvironmentAttraction"
+            app:layout_constraintVertical_weight="1"
+            app:srcCompat="@drawable/park" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="16dp"
-                android:orientation="vertical">
+        <ImageView
+            android:id="@+id/imageViewFootTrail"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewBikeTrail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/imageViewBikeTrail"
+            app:layout_constraintTop_toTopOf="@+id/imageViewBikeTrail"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/park" />
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/team_time"/>
+        <TextView
+            android:id="@+id/textViewProjectInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Informacje o projekcie"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewProjectInfo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageViewProjectInfo" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:text="Family"/>
+        <TextView
+            android:id="@+id/textViewEnvironmentAttraction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Atrakcje Przyrodnicze"
+            app:layout_constraintBottom_toTopOf="@+id/imageViewFootTrail"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewAnimalPlant"
+            app:layout_constraintStart_toStartOf="@+id/imageViewEnvironmentAttraction"
+            app:layout_constraintTop_toTopOf="@+id/imageViewEnvironmentAttraction" />
 
-            </LinearLayout>
+        <TextView
+            android:id="@+id/textViewAnimalPlant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Flora i fauna"
+            app:layout_constraintBottom_toTopOf="@+id/imageViewBikeTrail"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewAnimalPlant"
+            app:layout_constraintStart_toStartOf="@+id/imageViewAnimalPlant"
+            app:layout_constraintTop_toTopOf="@+id/imageViewAnimalPlant" />
 
-        </android.support.v7.widget.CardView>
+        <TextView
+            android:id="@+id/textViewBikeTrail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Trasy Rowerowe"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewBikeTrail"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewBikeTrail"
+            app:layout_constraintStart_toStartOf="@+id/imageViewBikeTrail"
+            app:layout_constraintTop_toTopOf="@+id/imageViewBikeTrail" />
+
+        <TextView
+            android:id="@+id/textViewFootTrail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Trasy Piesze"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewFootTrail"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewBikeTrail"
+            app:layout_constraintStart_toEndOf="@+id/imageViewFootTrail"
+            app:layout_constraintTop_toTopOf="@+id/imageViewFootTrail" />
+
+    </android.support.constraint.ConstraintLayout>
+    
+    <android.support.design.widget.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:id="@+id/nav_view"
+        app:headerLayout="@layout/menu_header"
+        app:menu="@menu/drawer_menu"/>
 
 
-
-    </android.support.v7.widget.GridLayout>
-
-</android.support.constraint.ConstraintLayout>
+</android.support.v4.widget.DrawerLayout>
