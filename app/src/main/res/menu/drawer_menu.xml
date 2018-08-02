@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_id_project_info"
+            android:title="O projekcie"
+            android:icon="@drawable/ic_project_info"/>
+        <item
+            android:id="@+id/nav_id_environment_attraction"
+            android:title="Atrakcje przyrodnicze"
+            android:icon="@drawable/ic_animal_plant"/>
+        <item
+            android:id="@+id/nav_id_animal_plant"
+            android:title="Flora i fauna"
+            android:icon="@drawable/ic_environment"/>
+        <item
+            android:id="@+id/nav_id_bike_trail"
+            android:title="Trasy rowerowe"
+            android:icon="@drawable/ic_bike"/>
+        <item
+            android:id="@+id/nav_id_foot_trail"
+            android:title="Trasy piesze"
+            android:icon="@drawable/ic_foot"/>
+        <item
+            android:id="@+id/nav_id_map"
+            android:title="mapa"
+            android:icon="@drawable/ic_map"/>
+
+
+    </group>
+
+</menu>
