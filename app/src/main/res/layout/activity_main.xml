@@ -8,10 +8,10 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="left">
 
-    <android.support.constraint.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="1dp">
+        android:orientation="vertical">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
@@ -20,140 +20,148 @@
             android:elevation="4dp"
             android:layout_width="match_parent"
             android:layout_height="?android:attr/actionBarSize"
-            android:background="@color/colorPrimary"/>
-
-        <FrameLayout
-            android:id="@+id/fragment_container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/imageViewProjectInfo"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:contentDescription="@string/todo"
-            android:cropToPadding="true"
-            android:scaleType="centerCrop"
-            android:src="@drawable/park"
-            app:layout_constraintBottom_toTopOf="@+id/imageViewEnvironmentAttraction"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_weight="1"
+            android:background="@color/colorPrimary"
             android:layout_marginBottom="1dp"/>
 
-        <ImageView
-            android:id="@+id/imageViewEnvironmentAttraction"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginBottom="1dp"
-            android:layout_marginRight="0.5dp"
-            android:scaleType="centerCrop"
-            app:layout_constraintBottom_toTopOf="@+id/imageViewBikeTrail"
-            app:layout_constraintEnd_toStartOf="@+id/imageViewAnimalPlant"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageViewProjectInfo"
-            app:layout_constraintVertical_weight="1"
-            app:srcCompat="@drawable/park" />
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="1dp">
 
-        <ImageView
-            android:id="@+id/imageViewAnimalPlant"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:scaleType="centerCrop"
-            android:layout_marginLeft="0.5dp"
-            app:layout_constraintBottom_toBottomOf="@+id/imageViewEnvironmentAttraction"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/imageViewEnvironmentAttraction"
-            app:layout_constraintTop_toTopOf="@+id/imageViewEnvironmentAttraction"
-            app:srcCompat="@drawable/park" />
+            <FrameLayout
+                android:id="@+id/fragment_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/imageViewBikeTrail"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginEnd="1dp"
-            android:scaleType="centerCrop"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageViewFootTrail"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageViewEnvironmentAttraction"
-            app:layout_constraintVertical_weight="1"
-            app:srcCompat="@drawable/park" />
+            <ImageView
+                android:id="@+id/imageViewProjectInfo"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:contentDescription="@string/todo"
+                android:cropToPadding="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/park"
+                app:layout_constraintBottom_toTopOf="@+id/imageViewEnvironmentAttraction"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_weight="1"
+                android:layout_marginBottom="1dp"/>
 
-        <ImageView
-            android:id="@+id/imageViewFootTrail"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:scaleType="centerCrop"
-            app:layout_constraintBottom_toBottomOf="@+id/imageViewBikeTrail"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/imageViewBikeTrail"
-            app:layout_constraintTop_toTopOf="@+id/imageViewBikeTrail"
-            app:layout_constraintVertical_bias="1.0"
-            app:srcCompat="@drawable/park" />
+            <ImageView
+                android:id="@+id/imageViewEnvironmentAttraction"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="0.5dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toTopOf="@+id/imageViewBikeTrail"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewAnimalPlant"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewProjectInfo"
+                app:layout_constraintVertical_weight="1"
+                app:srcCompat="@drawable/park" />
 
-        <TextView
-            android:id="@+id/textViewProjectInfo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Informacje o projekcie"
-            app:layout_constraintBottom_toBottomOf="@+id/imageViewProjectInfo"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/imageViewProjectInfo" />
+            <ImageView
+                android:id="@+id/imageViewAnimalPlant"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="centerCrop"
+                android:layout_marginLeft="0.5dp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageViewEnvironmentAttraction"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/imageViewEnvironmentAttraction"
+                app:layout_constraintTop_toTopOf="@+id/imageViewEnvironmentAttraction"
+                app:srcCompat="@drawable/park" />
 
-        <TextView
-            android:id="@+id/textViewEnvironmentAttraction"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Atrakcje Przyrodnicze"
-            app:layout_constraintBottom_toTopOf="@+id/imageViewFootTrail"
-            app:layout_constraintEnd_toStartOf="@+id/imageViewAnimalPlant"
-            app:layout_constraintStart_toStartOf="@+id/imageViewEnvironmentAttraction"
-            app:layout_constraintTop_toTopOf="@+id/imageViewEnvironmentAttraction" />
+            <ImageView
+                android:id="@+id/imageViewBikeTrail"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="1dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewFootTrail"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewEnvironmentAttraction"
+                app:layout_constraintVertical_weight="1"
+                app:srcCompat="@drawable/park" />
 
-        <TextView
-            android:id="@+id/textViewAnimalPlant"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Flora i fauna"
-            app:layout_constraintBottom_toTopOf="@+id/imageViewBikeTrail"
-            app:layout_constraintEnd_toEndOf="@+id/imageViewAnimalPlant"
-            app:layout_constraintStart_toStartOf="@+id/imageViewAnimalPlant"
-            app:layout_constraintTop_toTopOf="@+id/imageViewAnimalPlant" />
+            <ImageView
+                android:id="@+id/imageViewFootTrail"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="@+id/imageViewBikeTrail"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/imageViewBikeTrail"
+                app:layout_constraintTop_toTopOf="@+id/imageViewBikeTrail"
+                app:layout_constraintVertical_bias="1.0"
+                app:srcCompat="@drawable/park" />
 
-        <TextView
-            android:id="@+id/textViewBikeTrail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Trasy Rowerowe"
-            app:layout_constraintBottom_toBottomOf="@+id/imageViewBikeTrail"
-            app:layout_constraintEnd_toEndOf="@+id/imageViewBikeTrail"
-            app:layout_constraintStart_toStartOf="@+id/imageViewBikeTrail"
-            app:layout_constraintTop_toTopOf="@+id/imageViewBikeTrail" />
+            <TextView
+                android:id="@+id/textViewProjectInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Informacje o projekcie"
+                app:layout_constraintBottom_toBottomOf="@+id/imageViewProjectInfo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageViewProjectInfo" />
 
-        <TextView
-            android:id="@+id/textViewFootTrail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Trasy Piesze"
-            app:layout_constraintBottom_toBottomOf="@+id/imageViewFootTrail"
-            app:layout_constraintEnd_toEndOf="@+id/imageViewBikeTrail"
-            app:layout_constraintStart_toEndOf="@+id/imageViewFootTrail"
-            app:layout_constraintTop_toTopOf="@+id/imageViewFootTrail" />
+            <TextView
+                android:id="@+id/textViewEnvironmentAttraction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Atrakcje Przyrodnicze"
+                app:layout_constraintBottom_toTopOf="@+id/imageViewFootTrail"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewAnimalPlant"
+                app:layout_constraintStart_toStartOf="@+id/imageViewEnvironmentAttraction"
+                app:layout_constraintTop_toTopOf="@+id/imageViewEnvironmentAttraction" />
 
-    </android.support.constraint.ConstraintLayout>
-    
+            <TextView
+                android:id="@+id/textViewAnimalPlant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Flora i fauna"
+                app:layout_constraintBottom_toTopOf="@+id/imageViewBikeTrail"
+                app:layout_constraintEnd_toEndOf="@+id/imageViewAnimalPlant"
+                app:layout_constraintStart_toStartOf="@+id/imageViewAnimalPlant"
+                app:layout_constraintTop_toTopOf="@+id/imageViewAnimalPlant" />
+
+            <TextView
+                android:id="@+id/textViewBikeTrail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Trasy Rowerowe"
+                app:layout_constraintBottom_toBottomOf="@+id/imageViewBikeTrail"
+                app:layout_constraintEnd_toEndOf="@+id/imageViewBikeTrail"
+                app:layout_constraintStart_toStartOf="@+id/imageViewBikeTrail"
+                app:layout_constraintTop_toTopOf="@+id/imageViewBikeTrail" />
+
+            <TextView
+                android:id="@+id/textViewFootTrail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Trasy Piesze"
+                app:layout_constraintBottom_toBottomOf="@+id/imageViewFootTrail"
+                app:layout_constraintEnd_toEndOf="@+id/imageViewBikeTrail"
+                app:layout_constraintStart_toEndOf="@+id/imageViewFootTrail"
+                app:layout_constraintTop_toTopOf="@+id/imageViewFootTrail" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </LinearLayout>
+
     <android.support.design.widget.NavigationView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
@@ -161,6 +169,5 @@
         android:id="@+id/nav_view"
         app:headerLayout="@layout/menu_header"
         app:menu="@menu/drawer_menu"/>
-
 
 </android.support.v4.widget.DrawerLayout>
