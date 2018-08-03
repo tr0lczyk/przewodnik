@@ -2,4 +2,6 @@
     <string name="app_name">przewodnik</string>
     <string name="todo">TODO</string>
     <string name="ustka">Ustka</string>
+    <string name="open_nav">Open navigation drawer</string>
+    <string name="close_nav">Close Navigation drawer</string>
 </resources>
